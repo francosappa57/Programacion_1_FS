@@ -5,34 +5,35 @@ edad = int(input("Ingresa tu edad: "))
 print("\n-Atracciones-\n"+"Montaña Rusa $1500\n"+"Casa del Terror $1200\n"+"Carrusel $800")
 
 pago_total = 0
-lista_atracciones = []
-atracciones_permitidas = []
+lista_atracciones = ""
+atracciones_permitidas = ""
 
 while True:
     atraccion = input("Ingrese la atraccion: ").capitalize()
-    lista_atracciones.append(atraccion)
     match atraccion:
         case "Montaña rusa":
+                lista_atracciones += "Montaña Rusa, "
                 if edad >= 12:
                     print("Puede subir")
                     pago_total += 1500
-                    atracciones_permitidas.append("Montaña rusa")
+                    atracciones_permitidas += "Montaña rusa, "
                 else:
                     print("No se admiten menores de 12 años")
         case "Casa del terror":
+                lista_atracciones += "Casa del terror, "
                 if edad > 6:
                     print("Puede subir")
                     pago_total += 1200
-                    atracciones_permitidas.append("Casa del terror")
+                    atracciones_permitidas += "Casa del terror, "
                 else:
                     print("No se admiten menores de 6 años")
         case "Carrusel":
+                lista_atracciones += "Carrusel, "
                 print("Puede subir")
                 pago_total += 800
-                atracciones_permitidas.append("Carrusel")
+                atracciones_permitidas += "Carrusel, "
         case _:
                 print("Atraccion inexistente")
-                lista_atracciones.remove(atraccion)
     
     pregunta = input("Queres subirte a otra atraccion? ").lower()
     if pregunta == "si":
@@ -44,5 +45,5 @@ print(f"\n-Resumen-\n"
       f"Nombre: {nombre}\n"
       f"Atracciones Elegidas: {lista_atracciones}\n"
       f"Atracciones Permitidas: {atracciones_permitidas}\n"
-      f"Total a pagar: {pago_total}"
+      f"Total a pagar: ${pago_total}"
 )

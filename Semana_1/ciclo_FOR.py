@@ -1,40 +1,46 @@
-print("Bienvenido al Parque de Diversiones PythoLand!!")
+print("Bienvenido al Parque de Diversiones PythonLand!!")
 nombre = input("Ingresa tu nombre: ")
 edad = int(input("Ingresa tu edad: "))
 
-print("\n-Atracciones-\n"+"Montaña Rusa $1500\n"+"Casa del Terror $1200\n"+"Carrusel $800")
+print("\n-Atracciones-\n"+
+      ". Montaña Rusa $1500\n"+
+      ". Casa del Terror $1200\n"+
+      ". Carrusel $800"
+)
 
-cantidad_atracciones = int(input("A cuantas quiere subirse? "))
+cantidad_atracciones = int(input("A cuantas quieres subir? "))
 pago_total = 0
-lista_atracciones = []
-atracciones_permitidas = []
+lista_atracciones = ""
+atracciones_permitidas = ""
 
 for i in range(cantidad_atracciones):
-      atraccion = input("Ingrese la atraccion: ").capitalize()
-      lista_atracciones.append(atraccion)
+      atraccion = input("Ingrese la atraccion: ").lower()
       match atraccion:
-            case "Montaña rusa":
+            case "montaña rusa":
+                  lista_atracciones += "Montaña rusa, "
                   if edad >= 12:
                         print("Puede subir")
                         pago_total += 1500
-                        atracciones_permitidas.append("Montaña rusa")
+                        atracciones_permitidas += "Montaña rusa, "
                   else:
                         print("No se admiten menores de 12 años")
-            case "Casa del terror":
+            case "casa del terror":
+                  lista_atracciones += "Casa del terror, "
                   if edad > 6:
                         print("Puede subir")
                         pago_total += 1200
-                        atracciones_permitidas.append("Casa del terror")
+                        atracciones_permitidas += "Casa del terror, "
                   else:
                         print("No se admiten menores de 6 años")
             case _:
+                  lista_atracciones += "Carrusel, "
                   print("Puede subir")
                   pago_total += 800
-                  atracciones_permitidas.append("Carrusel")
+                  atracciones_permitidas += "Carrusel, "
 
 print(f"\n-Resumen-\n"
-      f"Nombre: {nombre}\n"
+      f"Nombre: {(nombre).capitalize()}\n"
       f"Atracciones Elegidas: {lista_atracciones}\n"
       f"Atracciones Permitidas: {atracciones_permitidas}\n"
-      f"Total a pagar: {pago_total}"
+      f"Total a pagar: ${pago_total}"
 )

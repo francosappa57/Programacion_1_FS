@@ -1,17 +1,21 @@
-print("Bienvenido al Parque de Diversiones PythoLand!!")
+print("Bienvenido al Parque de Diversiones PythonLand!!")
 nombre = input("Ingresa tu nombre: ")
 edad = int(input("Ingresa tu edad: "))
 
-print("\n-Atracciones-\n"+"Montaña Rusa $1500\n"+"Casa del Terror $1200\n"+"Carrusel $800")
+print("\n-Atracciones-\n"+
+      ". Montaña Rusa $1500\n"+
+      ". Casa del Terror $1200\n"+
+      ". Carrusel $800"
+)
 
 pago_total = 0
 lista_atracciones = ""
 atracciones_permitidas = ""
 
 while True:
-    atraccion = input("Ingrese la atraccion: ").capitalize()
+    atraccion = input("Ingrese la atraccion: ").lower()
     match atraccion:
-        case "Montaña rusa":
+        case "montaña rusa":
                 lista_atracciones += "Montaña Rusa, "
                 if edad >= 12:
                     print("Puede subir")
@@ -19,7 +23,7 @@ while True:
                     atracciones_permitidas += "Montaña rusa, "
                 else:
                     print("No se admiten menores de 12 años")
-        case "Casa del terror":
+        case "casa del terror":
                 lista_atracciones += "Casa del terror, "
                 if edad > 6:
                     print("Puede subir")
@@ -27,7 +31,7 @@ while True:
                     atracciones_permitidas += "Casa del terror, "
                 else:
                     print("No se admiten menores de 6 años")
-        case "Carrusel":
+        case "carrusel":
                 lista_atracciones += "Carrusel, "
                 print("Puede subir")
                 pago_total += 800
@@ -42,7 +46,7 @@ while True:
           break
 
 print(f"\n-Resumen-\n"
-      f"Nombre: {nombre}\n"
+      f"Nombre: {(nombre).capitalize()}\n"
       f"Atracciones Elegidas: {lista_atracciones}\n"
       f"Atracciones Permitidas: {atracciones_permitidas}\n"
       f"Total a pagar: ${pago_total}"

@@ -2,9 +2,9 @@
 
 metros_cubicos = float(input("Indique consumo por metro cubico (numeros enteros): "))
 
-print("\n-Lugar-\n"+
-      "1. Residencial\n"+
-      "2. Comercial\n"+
+print("\n-Lugar-\n"
+      "1. Residencial\n"
+      "2. Comercial\n"
       "3. Industrial"
     )
 cliente = int(input("Elija una opcion: "))

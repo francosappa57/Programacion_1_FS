@@ -48,10 +48,10 @@ iva = subtotal_recargos_bonificaciones * 0.21
 precio_final = subtotal_recargos_bonificaciones + iva
 
 print("\n-----Resumen-----")
-print(f"Subtotal: ${float(subtotal_sin_impuesto)}\n"
-      f"Bonificaciones: -${float(bonificaciones)}\n"
-      f"Recargos: +${float(recargos)}\n"
-      f"Subtotal con recargos/bonificaciones: ${float(subtotal_recargos_bonificaciones)}\n"
-      f"IVA: +${float(iva)}\n"
-      f"Total a pagar: ${float(precio_final)}"
+print(f"Subtotal: ${subtotal_sin_impuesto}\n"
+      f"Bonificaciones: -${bonificaciones}\n"
+      f"Recargos: +${recargos}\n"
+      f"Subtotal con recargos/bonificaciones: ${subtotal_recargos_bonificaciones}\n"
+      f"IVA: +${iva}\n"
+      f"Total a pagar: ${precio_final}"
       )

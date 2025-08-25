@@ -1,6 +1,6 @@
 # Programa de facturacion de servicio de agua potable
 
-cantidad_metros = int(input("Indique consumo por metro cubico (numeros enteros): "))
+metros_cubicos = float(input("Indique consumo por metro cubico (numeros enteros): "))
 
 print("\n-Lugar-\n"+
       "1. Residencial\n"+
@@ -10,38 +10,48 @@ print("\n-Lugar-\n"+
 cliente = int(input("Elija una opcion: "))
 
 precio_fijo = 7000
-consumo_metro_cubico = cantidad_metros * 200
+consumo_metro_cubico = metros_cubicos * 200
 subtotal_sin_impuesto = precio_fijo + consumo_metro_cubico
 bonificacion = 0
 recargo = 0
 
 match cliente:
     case 1:
-        if cantidad_metros < 30:
-            bonificacion += 10
-        elif cantidad_metros > 80:
-            recargo += 15
+        if metros_cubicos < 30:
+            bonificacion += 0.10
+        elif metros_cubicos > 80:
+            recargo += 1.15
     case 2:
-        if cantidad_metros > 300:
-            bonificacion += 12
-        elif cantidad_metros > 150:
-            bonificacion += 8
-        elif cantidad_metros < 50:
-            recargo += 5
+        if metros_cubicos > 300:
+            bonificacion += 0.12
+        elif metros_cubicos > 150:
+            bonificacion += 0.08
+        elif metros_cubicos < 50:
+            recargo += 1.05
     case 3:
-        if cantidad_metros > 1000:
-            bonificacion += 30
-        elif cantidad_metros > 500:
-            bonificacion += 20
-        elif cantidad_metros < 200:
-            recargo += 10
+        if metros_cubicos > 1000:
+            bonificacion += 0.30
+        elif metros_cubicos > 500:
+            bonificacion += 0.20
+        elif metros_cubicos < 200:
+            recargo += 1.10
     case _:
-        if cliente == 1 and subtotal_sin_impuesto < 35000:
-            bonificacion += 5
+        print("Opcion incorrecta")
 
-bonificaciones = consumo_metro_cubico * (bonificacion / 100)
-recargos = consumo_metro_cubico * (recargo / 100)
-# iva = * 0.21
-# precio_final = 
+if cliente == 1 and subtotal_sin_impuesto <= 35000:
+    bonificacion += 0.05
 
-print(bonificaciones)
+bonificaciones = subtotal_sin_impuesto * bonificacion
+recargos = subtotal_sin_impuesto * recargo
+subtotal_recargos_bonificaciones = subtotal_sin_impuesto + recargos - bonificaciones
+iva = subtotal_recargos_bonificaciones * 0.21
+precio_final = subtotal_recargos_bonificaciones + iva
+
+print("\n-----Resumen-----")
+print(f"Subtotal: ${float(subtotal_sin_impuesto)}\n"
+      f"Bonificaciones: -${float(bonificaciones)}\n"
+      f"Recargos: +${float(recargos)}\n"
+      f"Subtotal con recargos/bonificaciones: ${float(subtotal_recargos_bonificaciones)}\n"
+      f"IVA: +${float(iva)}\n"
+      f"Total a pagar: ${float(precio_final)}"
+      )

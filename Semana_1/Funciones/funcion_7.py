@@ -12,4 +12,4 @@ acceso = verificar_acceso(usuario)
 if acceso == True:
     print("Acceso concedido")
 else:
-    print("Acceso denegado. Tiene que ser mayor de 18 años")
+    print("Acceso denegado. Tenes que ser mayor de 18 años")

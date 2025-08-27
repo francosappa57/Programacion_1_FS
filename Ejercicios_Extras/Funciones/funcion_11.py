@@ -1,4 +1,4 @@
-import funcion_primos.primos as fp
+import funciones_varias.primos as fp
 
 num = int(input("Ingresa un numero entero: "))
 resultado = fp.calcular(num)

@@ -1,5 +1,5 @@
-def mostrar_numero(num):
+def mostrar_entero(num):
     return num
 
 usuario = int(input("Ingresa un numero entero: "))
-print(mostrar_numero(usuario))
+print(mostrar_entero(usuario))

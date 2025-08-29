@@ -1,5 +1,5 @@
-def mostrar_numero(num):
+def mostrar_decimal(num):
     return num
 
 usuario = float(input("Ingresa un numero decimal: "))
-print(mostrar_numero(usuario))
+print(mostrar_decimal(usuario))

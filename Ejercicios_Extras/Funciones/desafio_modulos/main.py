@@ -18,9 +18,16 @@ elif usuario == 2:
     respuesta_float = fi.get_float(mensaje, mensaje_error, minimo, maximo, reintentos)
     print(respuesta_float)
 else:
-    
-    palabra = input("Ingresa una clave: ")
-    palabra = len(palabra)
-    respuesta_string = fi.get_string(mensaje_error, palabra, reintentos)
-    print(respuesta_string)
-
+    while reintentos > 0:
+        palabra = fi.clave()
+        respuesta_string = fi.get_string(palabra)
+        if respuesta_string != None:
+            print(respuesta_string)
+            break
+        else:
+            if reintentos > 1:
+                print(mensaje_error)
+                print(f"Te quedan {reintentos - 1} intentos")
+            else: 
+                print(respuesta_string)
+        reintentos -= 1

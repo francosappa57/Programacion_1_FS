@@ -30,15 +30,17 @@ def get_float(mensaje, mensaje_error, minimo, maximo, reintentos):
     return None
 
 
-def get_string(mensaje_error, longitud, reintentos):
-    while reintentos > 0:
-        resultado = fv.validate_length(longitud)
-        if resultado == True:
-            return "Acceso concedido"
-        else:
-            print(mensaje_error)
-            reintentos -= 1 
-            if reintentos > 0:
-                print(f"Te quedan {reintentos} intentos")
-    return None
-        
+def clave():
+    palabra = input("Ingresa una clave: ")
+    palabra = len(palabra)
+    return palabra
+
+
+def get_string(longitud):
+    resultado = fv.validate_length(longitud)
+    if resultado == True:
+        return "Acceso concedido"
+    else:
+        return None
+    
+    

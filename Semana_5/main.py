@@ -1,5 +1,5 @@
 import funciones as f
-CANT_LIBROS = 4
+CANT_LIBROS = 20
 array_libros = [""] * CANT_LIBROS
 array_copias = [0] * CANT_LIBROS
 

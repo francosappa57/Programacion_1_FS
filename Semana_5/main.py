@@ -1,4 +1,7 @@
 import funciones as f
+CANT_LIBROS = 4
+array_libros = [""] * CANT_LIBROS
+array_copias = [0] * CANT_LIBROS
 
 while True:
     print("\t---Biblioteca---")
@@ -12,20 +15,32 @@ while True:
     datos = int(input("Elige una opcion: "))
 
     if datos == 1:
-        ejem, cant = f.cargar_libro() 
+        f.cargar_libro(array_libros, array_copias) 
     elif datos == 2:
-        f.mostrar_libros(ejem, cant)
+        f.mostrar_libros(array_libros, array_copias)
     elif datos == 3:
-        pedir_titulo = input("Ingresa titulo a consultar: ")
-        f.disponible(pedir_titulo, ejem, cant)
+        resultado = f.cant_copias(array_libros, array_copias)
+        if resultado == None:
+            print(f"Sin copias")
+        else:    
+            print(f"Quedan {resultado} copia/s")
     elif datos == 4:
-        f.sin_copias(ejem, cant)
+        lista = f.sin_copias(array_libros, array_copias)
+        if lista == None:
+            print("Todos los libros tienen copias disponibles")
+        else:
+            print("Libros sin copias:")
+            for i in lista:
+                if i != "":
+                    print(f". {i}")   
     elif datos == 5:
-        f.agregar_titulo(ejem, cant)
+        resultado = f.agregar_titulo(array_libros, array_copias)
+        if resultado == None:
+            print("No se pueden agregar mas titulos")
+        else:
+            print("Titulo agregado")
     elif datos == 6:
-        print(ejem)
-        pedir_libro = input("Que libro queres modificar? ")
-        f.actualizar(pedir_libro, ejem, cant)
+        f.actualizar(array_libros, array_copias)
     elif datos == 7:
         break
 

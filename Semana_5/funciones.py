@@ -1,56 +1,70 @@
-CANT_LIBROS = 4
-libros = [""] * CANT_LIBROS
-copias = [0] * CANT_LIBROS
-
-def cargar_libro():
-    for i in range(CANT_LIBROS):
+def cargar_libro(lista_libro, lista_copia):
+    for i in range(len(lista_libro)):
         ejem = input("Ingresa un libro: ")
         cant = int(input("Ingresa cantidad de ejemplares: "))
-        libros[i] = ejem
-        copias[i] = cant
+        lista_libro[i] = ejem.title()
+        lista_copia[i] = cant
         pregunta = input("Queres agregar otro libro? (s/n) ").lower()
         if pregunta == "n":
             break
-    return libros, copias
+    return lista_libro, lista_copia 
 
 
 def mostrar_libros(libro, copia):
     for i in range(len(libro)):
-        if libro[i] == "":
-            pass
-        else:
+        if libro[i] != "":
             print(f"{libro[i]} -> {copia[i]} copias", end="\n")
 
 
-def disponible(consulta, libro, copia):
+def cant_copias(libro, copia):
+    print("Lista Libros:")
+    for i in libro:
+        if i != "":
+            print(f". {i}")
+    consulta = input("Ingresa titulo a consultar: ").lower()
+    
     for i in range(len(libro)):
-        if libro[i] == consulta:
-            print(f"Quedan {copia[i]} copias")
+        if libro[i].lower() == consulta:
+            if copia[i] != 0:
+                return copia[i]
+            else:
+                return None
 
 
 def sin_copias(libro, copia):
-    print("Libros sin copias disponibles:")
-    for i in range(CANT_LIBROS):
+    lista_sin_copias = [""] * len(libro)
+    contador = 0
+    for i in range(len(libro)):
         if libro[i] != "":
             if copia[i] == 0:
-                print(libro[i])
-
+                lista_sin_copias[contador] = libro[i]
+                contador += 1
+    if contador == 0:
+        return None
+    else:
+        return lista_sin_copias
 
 def agregar_titulo(libro, copia):
-    for i in range(CANT_LIBROS):
+    cambios = None
+    for i in range(len(libro)):
         if libro[i] == "":
-            nuevo_libro = input("Ingresa nuevo libro: ")
+            nuevo_libro = input("Ingresa nuevo libro: ").title()
             nueva_copia = int(input("Ingresa cantidad de copias: "))
             libro[i] = nuevo_libro
             copia[i] = nueva_copia
-            print("Libro agregado")
-        else:
-            print("No se pueden agregar nuevos libros")
+            cambios = 1
+            return cambios
 
-
-def actualizar(cambio, libro, copia):
-    for i in range(CANT_LIBROS):
-        if libro[i] == cambio:
+       
+def actualizar(libro, copia):
+    print("Lista Libros:")
+    for i in libro:
+        if i != "":
+            print(f". {i}")
+    modif = input("Que libro queres modificar? ").lower()
+    
+    for i in range(len(libro)):
+        if libro[i].lower() == modif:
             cambiar_cant = int(input("Ingresa nueva cantidad: "))
             copia[i] = cambiar_cant
-            print("Copias modificadas")
+            print("Copia modificada")

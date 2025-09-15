@@ -57,7 +57,7 @@ def posicion_valor_max(vec):
 
 def posiciones(vec):
     maximo = 0
-    indice = []
+    indice = ""
     for x in range(len(vec)):
         if vec[x] >= maximo:
             maximo = vec[x]

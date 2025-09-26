@@ -1,8 +1,14 @@
 def agregar_numeros(num=5):
     vec_numeros = [0] * num
     for x in range(len(vec_numeros)):
-        solicitar_num = int(input("Ingresar numero entero: "))
-        vec_numeros[x] = solicitar_num
+        validar = False
+        while validar == False:
+            solicitar_num = int(input("Ingresar numero entero: "))
+            if solicitar_num == 0:
+                print("Solo entero mayores a 0")
+            else:
+                vec_numeros[x] = solicitar_num
+                validar = True
     return vec_numeros
 
 
@@ -55,23 +61,15 @@ def posicion_valor_max(vec):
     return posicion
 
 
-# def posiciones(vec):
-#     lista = [0] * len(vec)
-#     maximo = None
-#     indice = None
-#     for x in range(len(vec)):
-#         if x == 0:
-#             maximo = vec[x]
-#             indice = x
-#             lista[indice] = x
-#         elif vec[x] > maximo:
-#             maximo = vec[x]
-#             indice = 0
-#             lista[indice] = x
-#         elif vec[x] == maximo:
-#             lista[indice] = x
-#         indice += 1
-#     return lista
+def posiciones(vec):
+    num_mayor = 0
+    for i in range(len(vec)):
+        if vec[i] >= num_mayor:
+            num_mayor = vec[i]
+    print(f"Numero mayor - {num_mayor}")
+    for x in range(len(vec)):
+        if num_mayor == vec[x]:
+            print(f"Posicion - index {x}")
  
 
 def reemplazar_nombre(lista_nombres, nombre_antiguo, nombre_nuevo):
@@ -79,9 +77,49 @@ def reemplazar_nombre(lista_nombres, nombre_antiguo, nombre_nuevo):
     for x in range(len(lista_nombres)):
         for j in range(len(nombre_antiguo)):
             if lista_nombres[x] == nombre_antiguo[j]:
-                for v in nombre_nuevo:
-                    pass
-                    lista_nombres[x] = v
-                
+                lista_nombres[x] = nombre_nuevo[j]
                 reemplazo += 1
     return reemplazo
+
+
+def interseccion_vectores(lista1, lista2):
+    print(f"Interseccion entre {lista1} y {lista2}")
+    for i in range(len(lista1)):
+        for j in range(len(lista2)):
+            if lista1[i] == lista2[j]:
+                print(lista2[j], end=" ")
+
+
+def union_vectores(lista1, lista2):
+    union = len(lista1) + len(lista2)
+    vec_union = [0] * union 
+    contador = 0
+    print(f"Union entre {lista1} y {lista2}")
+    for i in range(union):
+        if i < len(lista1):
+            vec_union[i] = lista1[contador]
+        else:
+            if i == len(lista1):
+                contador = 0
+            vec_union[i] = lista2[contador]
+        contador += 1
+    print(vec_union)
+
+
+def diferencia_vectores(lista1, lista2):
+    print(f"Diferencias entre {lista1} y {lista2}")
+    for i in range(len(lista1)):
+        diferente = True
+        for j in lista2:
+            if lista1[i] == j:
+                diferente = False
+        if diferente == True:
+            print(lista1[i], end=" ")
+
+    for i in range(len(lista2)):
+        diferente = True
+        for j in lista1:
+            if lista2[i] == j:
+                diferente = False
+        if diferente == True:
+            print(lista2[i], end=" ")     

@@ -33,8 +33,8 @@ def ingresar_datos(personas, puntuacion, comentario):
     
         print(f"\nParticipante {x + 1}")
         print(f"Nombre: {personas[x]}\n"
-                f"Puntuacion: {puntuacion[x]}\n"
-                f"Comentario: {comentario[x]}")
+              f"Puntuacion: {puntuacion[x]}\n"
+              f"Comentario: {comentario[x]}")
         pregunta = input("Desea agreagr otro participante?(s/n) ").lower()
         if pregunta == "n":
             break

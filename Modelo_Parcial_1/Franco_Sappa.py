@@ -67,7 +67,7 @@ def calcular_promedio(puntuacion):
 
 def ordenar(persona, puntuacion, comentario):
     largo = len(puntuacion)
-    for i in range(largo - 1):
+    for i in range(largo):
         intercambio = False
         for j in range(largo - i - 1):
             if puntuacion[j + 1] != 0:

@@ -27,9 +27,9 @@ while True:
     elif opcion == "6":
         f.buscar_tema_url(plg)
     elif opcion == "7":
-        pass
+        f.filtrar_colabo(plg)
     elif opcion == "8":
-        pass
+        f.filtrar_mes(plg)
     elif opcion == "9":
         break
     else:

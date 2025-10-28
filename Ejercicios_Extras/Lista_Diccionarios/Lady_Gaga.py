@@ -1,7 +1,7 @@
 playlist_lady_gaga = [
     {
         "Tema": "Just Dance",
-        "Colabo": ["Colby O'Donis | Akon"], 
+        "Feat": ["Colby O'Donis", "Akon"], 
         "Vistas": 300,
         "Duracion": "4:01",
         "Link Youtube": "https://www.youtube.com/watch?v=2Abk1jAONjw",
@@ -44,7 +44,7 @@ playlist_lady_gaga = [
     },
     {
         "Tema": "Telephone",
-        "Colabo": ["Beyoncé | Kanye West"],
+        "Feat": ["Beyoncé", "Kanye West"],
         "Vistas": 500,
         "Duracion": "3:40",
         "Link Youtube": "https://www.youtube.com/watch?v=EVBsypHzF3U",
@@ -94,7 +94,7 @@ playlist_lady_gaga = [
     },
     {
         "Tema": "Do What U Want",
-        "Colabo": ["R. Kelly | Christina Aguilera"],
+        "Feat": ["R. Kelly", "Christina Aguilera"],
         "Vistas": 100,
         "Duracion": "3:47",
         "Link Youtube": "https://www.youtube.com/watch?v=1Ek5QdDjeQ4",
@@ -130,7 +130,7 @@ playlist_lady_gaga = [
     },
     {
         "Tema": "Shallow",
-        "Colabo": ["Bradley Cooper | Lukas Nelson"],
+        "Feat": ["Bradley Cooper", "Lukas Nelson"],
         "Vistas": 1900,
         "Duracion": "3:37",
         "Link Youtube": "https://www.youtube.com/watch?v=bo_efYhYU2A",
@@ -152,7 +152,7 @@ playlist_lady_gaga = [
     },
     {
         "Tema": "Rain On Me",
-        "Colabo": ["Ariana Grande | Dua Lipa"],
+        "Feat": ["Ariana Grande", "Dua Lipa"],
         "Vistas": 700,
         "Duracion": "3:02",
         "Link Youtube": "https://www.youtube.com/watch?v=AoAm4om0wTs",
@@ -160,7 +160,7 @@ playlist_lady_gaga = [
     },
     {
         "Tema": "Sour Candy",
-        "Colabo": ["BLACKPINK | Selena Gomez"],
+        "Feat": ["BLACKPINK", "Selena Gomez"],
         "Vistas": 500,
         "Duracion": "2:37",
         "Link Youtube": "https://www.youtube.com/watch?v=8kJ7qD5q6Qk",
@@ -182,7 +182,7 @@ playlist_lady_gaga = [
     },
     {
         "Tema": "Electric Dreams",
-        "Colabo": ["The Weeknd | Elton John"],
+        "Feat": ["The Weeknd", "Elton John"],
         "Vistas": 10,
         "Duracion": "3:45",
         "Link Youtube": "https://www.youtube.com/watch?v=ficticio2024",
@@ -190,7 +190,7 @@ playlist_lady_gaga = [
     },
     {
         "Tema": "Neon Hearts",
-        "Colabo": ["Dua Lipa | Bruno Mars"],
+        "Feat": ["Dua Lipa", "Bruno Mars"],
         "Vistas": 25,
         "Duracion": "4:12",
         "Link Youtube": "https://www.youtube.com/watch?v=ficticio2024b",
@@ -198,7 +198,7 @@ playlist_lady_gaga = [
     },
     {
         "Tema": "Starlight",
-        "Colabo": ["Ariana Grande | The Weeknd"],
+        "Feat": ["Ariana Grande", "The Weeknd"],
         "Vistas": 15,
         "Duracion": "3:50",
         "Link Youtube": "https://www.youtube.com/watch?v=ficticio2024c",
@@ -206,7 +206,7 @@ playlist_lady_gaga = [
     },
     {
         "Tema": "Electric Love",
-        "Colabo": ["Dua Lipa | Sia"],
+        "Feat": ["Dua Lipa", "Sia"],
         "Vistas": 20,
         "Duracion": "3:30",
         "Link Youtube": "https://www.youtube.com/watch?v=ficticio2025a",
@@ -214,7 +214,7 @@ playlist_lady_gaga = [
     },
     {
         "Tema": "Midnight Sky",
-        "Colabo": ["The Weeknd | Ariana Grande"],
+        "Feat": ["The Weeknd", "Ariana Grande"],
         "Vistas": 30,
         "Duracion": "4:00",
         "Link Youtube": "https://www.youtube.com/watch?v=ficticio2025b",

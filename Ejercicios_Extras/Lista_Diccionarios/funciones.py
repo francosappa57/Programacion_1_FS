@@ -1,7 +1,9 @@
+from datetime import datetime
+
 def monstrar_tema(canciones):
     print("\n--- Temas de Lady Gaga ---")
     for i in range(len(canciones)):
-        print(f"Titulo: {canciones[i]["Tema"]} - Duracion: {canciones[i]["Duracion"]}")
+        print(canciones[i]["Tema"] + "\t", canciones[i]["Duracion"])
     
 
 def ordenar_por_duracion(canciones):
@@ -38,10 +40,10 @@ def video_mas_visto(canciones):
 
 def video_menos_visto(canciones):
     indice = None
-    vistas = 0
+    vistas = None
     for i in range(len(canciones)):
-        if vistas == 0:
-            vistas = canciones[i]["Vistas"]
+        if vistas == None:
+            vistas = canciones[i]["Vistas"] 
             indice = i
         else:
             if canciones[i]["Vistas"] < vistas:
@@ -61,7 +63,40 @@ def buscar_tema_url(canciones):
     print("\n--- Info ---")
     for i, j in canciones[indice].items():
         print(f"{i}: {j}")
-    
+
+
+def filtrar_colabo(canciones):
+    indice = []
+    musico = input("\nIngresa musico: ").title()
+    validar = False
+    for i in canciones:
+        if "Feat" in i.keys():
+            if musico in i["Feat"]:
+                validar = True 
+                indice.append(canciones.index(i))
+    if validar == False:
+        print("\nEl musico no se encuentra en ninguna cancion")
+    else:
+        print(f"\n\t--- Canciones con {musico.title()} ---")
+        for i in indice:
+            cambio = list(canciones[i].items())
+            for j, k in cambio:
+                print(f"{j} - {k}")
+            print("")
+
+
+def filtrar_mes(canciones):
+    mes = int(input("\nIngresa mes de lanzamiento(en numeros): "))
+    validar = False
+    print(f"\n\t--- Lanamientos del mes {mes:02d} ---")
+    for i in canciones:
+        fecha = datetime.strptime(i["Fecha lanzamiento"], "%Y-%m-%d")
+        if fecha.month == mes:
+            validar = True        
+            print(f"Tema - {i["Tema"]}")
+    if not validar:
+        print("No se lanzaron temas ese mes\n") 
+        
 
 
 
